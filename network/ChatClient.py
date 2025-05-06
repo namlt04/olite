@@ -505,6 +505,8 @@ class ChatClient:
         sha256 = hashlib.sha256()
         sha256.update(full_cipher)
         id = sha256.hexdigest() 
+        
+        # tạo id file, 
 
         message = {
             "category" : "SEND_FILE",

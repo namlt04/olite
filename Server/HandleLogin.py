@@ -112,8 +112,8 @@ class HandleLogin:
         self.clients_authentications[username] = pyotp.random_base32() 
         totp = pyotp.TOTP(self.clients_authentications[username],interval=300 )
         otp_send = totp.now()
-        sender_email = "" # email@example.com
-        sender_passwd =  "" # app password
+        sender_email = "namlt04.nb@gmail.com" # email@example.com
+        sender_passwd =  "sjki jrza efrb tawq" # app password
         if email:
             receiver = email
         else:

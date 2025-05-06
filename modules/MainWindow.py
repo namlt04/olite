@@ -3,7 +3,7 @@ from modules import Ui_MainWindow
 from PySide6.QtWidgets import QMainWindow, QApplication, QListWidgetItem, QWidget, QLabel, QVBoxLayout, QFrame, QFileDialog, QDialogButtonBox, QSpacerItem, QSizePolicy, QLineEdit, QPushButton, QHBoxLayout
 from PySide6.QtCore import Qt, QSize, QTimer, QDateTime, QEvent
 from PySide6.QtGui import QIcon
-from network.Client.ChatClient import ChatClient
+from network.ChatClient import ChatClient
 from modules.SystemTrayIcon import SystemTrayIcon
 
 from modules.FriendRequest import FriendRequest

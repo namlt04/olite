@@ -271,7 +271,12 @@ class ChatServer:
          # ĐỊA CHỈ FILE LƯU VÀO, KHI CÓ YÊU CẦU TẢI FILE, NÓ SẼ GỬI YÊU CẦU TỚI HỆ SERVER, SERVER TRUY CẬP TỚI ĐỊA CHỈ NÀY ĐỂ GỬI 
          file_path = os.path.join("D:\\db", f"{file[0]}.{file[2]}")
          # LƯU FILE
-         await self.cursor.execute(ChatServerQuery.INSERT_FILE_QUERY, (file[0], file_path, file[2], file[3], mssg[0]))
+         await self.cursor.execute(ChatServerQuery.INSERT_FILE_QUERY, (file[0], file_path, file[2], file[3], message["mssg"][0]))
+
+   #        INSERT_FILE_QUERY = """
+   #      insert into files(file_id,  file_url, file_type, file_size, message_id)
+   #      values(%s, %s, %s, %s, %s)
+   #  """
          await self.conn.commit()
       
       

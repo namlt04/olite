@@ -31,7 +31,7 @@ class ChatServerQuery:
     
     SEND_REQUEST_QUERY = "insert into friends(user1, user2, user1_status, user2_status) values(%s, %s, %s, %s)"
     DENY_REQUEST_QUERY = "delete from friends where relationship_id = %s;"
-    INFO_FILE_QUERY = " select * from files join on messages where file_id = %s;"
+    # INFO_FILE_QUERY = " select * from files join on messages where file_id = %s;"
     INFO_FILE_QUERY = """
     select f.* , m.key_enc
     from files f
@@ -39,7 +39,7 @@ class ChatServerQuery:
     where f.file_id = %s;
     """
     INSERT_FILE_QUERY = """
-        insert ignore into files(file_id,  file_url, file_type, file_size, message_id)
+        insert into files(file_id,  file_url, file_type, file_size, message_id)
         values(%s, %s, %s, %s, %s)
     """
     INSERT_MESSAGE_QUERY = """
