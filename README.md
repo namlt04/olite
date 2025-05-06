@@ -6,4 +6,5 @@
 - Implemented encryption for data (files and chat content) using RSA and AES, and secured the connection with WebSockets and TLS.
 - Managed user data and messages with MySQL and SQLite.
 > Please install all the necessary modules and set up the database so that the application can run.
+
 > Link demo: https://www.youtube.com/watch?v=upZzQLof9wg
