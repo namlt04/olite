@@ -12,9 +12,10 @@ import ssl
 import hashlib
 import base64
 
-from network.Client.HandleFriend import HandleFriend
-from network.Client.HandleConversation import HandleConversation
-from network.Client.HandleAccount import HandleAccount
+
+from network.HandleFriend import HandleFriend
+from network.HandleConversation import HandleConversation
+from network.HandleAccount import HandleAccount
 from modules.AppNotification import AppNotification
 
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes

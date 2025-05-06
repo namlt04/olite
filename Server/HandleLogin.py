@@ -112,8 +112,8 @@ class HandleLogin:
         self.clients_authentications[username] = pyotp.random_base32() 
         totp = pyotp.TOTP(self.clients_authentications[username],interval=300 )
         otp_send = totp.now()
-        sender_email = "namlt04.nb@gmail.com"
-        sender_passwd =  "sjki jrza efrb tawq"
+        sender_email = "" # email@example.com
+        sender_passwd =  "" # app password
         if email:
             receiver = email
         else:
@@ -184,9 +184,6 @@ class HandleLogin:
         await self.client_queue[websocket].put(data)
 
     async def verify_username(self, username, email):
-        # KIỂM TRA USERNAME CỦA 1 EMAIL HOẶC EMAIL CỦA 1 USERNAME CÓ TỒN TẠI TRONG HỆ THỐNG HAY KHÔNG 
-        # QUÊN MẬT KHẨU : NGƯỜI DÙNG NHẬP USERNAME, KIỂM TRA XEM NÓ CÓ TỒN TẠI TRONG HỆ THỐNG HAY KHÔNG, ĐỒNG THỜI LẤY EMAIL CỦA USERNAME ĐÓ
-        # QUÊN MẬT KHẨU : NGƯỜI DÙNG NHẬP EMAIL, KIỂM TRA XEM NÓ CÓ TỒN TẠI TRONG HỆ THỐNG HAY KHÔNG, ĐỒNG THỜI LẤY UESRNAME CỦA EMAIL ĐÓ
         await self.cursor.execute(ChatServerQuery.VERIFY_USER_QUERY, (username,email))
         result = await self.cursor.fetchone()
         if result: 

@@ -47,7 +47,7 @@ class ChatServer:
    async def create_my_server(self): 
      await self.sqlConnections()
      ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
-     ssl_context.load_cert_chain(certfile="network\\Server\\cert.pem", keyfile="network\\Server\\key.pem")
+     ssl_context.load_cert_chain(certfile="Server/cert.pem", keyfile="Server/key.pem")
      server = await websockets.serve(self.handle, "127.0.0.1", 3101, ssl=ssl_context)
      await server.wait_closed()
          
